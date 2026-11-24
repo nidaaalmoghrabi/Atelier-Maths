@@ -1,0 +1,15 @@
+{
+  "name": "atelier-maths-full-stack",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local full-stack mathematics teaching app for EB4\u2013EB9 (Node.js, no Python)",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "check": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,52 @@
+{
+  "g4": {
+    "file": "books/g4.pdf",
+    "bytes": 5537324,
+    "sha256": "b9cf75f33fec14a9cdfa4145b0246a4aef53e060283ff23ad81b37100775caf6"
+  },
+  "g5": {
+    "file": "books/g5.pdf",
+    "bytes": 1355376,
+    "sha256": "57f4ab1db6b8c4785c364ee7f27a5783586c79b0e3e26064cbfc198aa9d4446d"
+  },
+  "g6v1": {
+    "file": "books/g6v1.pdf",
+    "bytes": 2886684,
+    "sha256": "56247beca0d245fb3098b686ac5a8bbcc6b96241a639e0bfd56dbb9df8ba10d2"
+  },
+  "g6v2": {
+    "file": "books/g6v2.pdf",
+    "bytes": 3175653,
+    "sha256": "855ee95f9d920ec1b8a61d00e86d5e2c7715c1467ce6b65b873d8116aa626430"
+  },
+  "g7": {
+    "file": "books/g7.pdf",
+    "bytes": 1314486,
+    "sha256": "90b340924f536cef8d6f1a4e3814855b5107843dd09fd82cf89259661a1e821c"
+  },
+  "g7-fr": {
+    "file": "books/g7-fr.pdf",
+    "bytes": 1377690,
+    "sha256": "64698a5dad871090046a3d44a39e2cc1d85cbc39fd2d13d4880d95e902209daa"
+  },
+  "g4-fr": {
+    "file": "books/g4-fr.pdf",
+    "bytes": 7697373,
+    "sha256": "83824f7e4493b30d408507e7209e4dfe44fb13c80a1a799d5290193479b2ed72"
+  },
+  "g5-fr": {
+    "file": "books/g5-fr.pdf",
+    "bytes": 2485152,
+    "sha256": "8e9bcfcb52fb96b91eb77a173b9b008fc331afe6d4cb93c14ebd596ba29c8854"
+  },
+  "g6v1-fr": {
+    "file": "books/g6v1-fr.pdf",
+    "bytes": 2186260,
+    "sha256": "27ea86789e414657ceecaf6eb6be65b045d59fdf78c185396f6eb16c6d2657fd"
+  },
+  "g6v2-fr": {
+    "file": "books/g6v2-fr.pdf",
+    "bytes": 4806357,
+    "sha256": "3ff78c37021028eba282d682e98a8a59ef25bf60c31cb2d29852518e7d0a573f"
+  }
+}

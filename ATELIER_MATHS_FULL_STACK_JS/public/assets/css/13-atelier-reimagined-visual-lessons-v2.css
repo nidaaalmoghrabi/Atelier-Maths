@@ -1,0 +1,58 @@
+
+/* Atelier Maths visual-studio slideshow: uses designs from actual teacher reference */
+.ps-root .ps-visual.psv-canvas{width:100%;max-width:1120px;aspect-ratio:16/9;margin:0 auto;padding:0;border:1px solid #ddd4f1;border-radius:11px;background:#f8f5fd;color:#35264f;overflow:hidden;position:relative;font-family:Arial,Helvetica,sans-serif;container-type:inline-size;box-shadow:0 8px 24px rgba(45,27,87,.14)}
+.psv-canvas .psv-head{height:12%;display:flex;align-items:center;justify-content:space-between;margin:0 5.6%;border-bottom:1px solid #dfd8ef;font-size:1.24cqw;color:#6245a4}
+.psv-head strong{color:#14a9a4;margin-left:.6cqw}.psv-head i{font-style:normal;font-weight:700;background:#ebe4fb;padding:.7cqw 1.2cqw;border-radius:2cqw;font-size:1.04cqw}
+.psv-canvas .psv-h1{font-size:2.54cqw;line-height:1.12;font-weight:800;margin:1.8% 5.6% 1.25%;height:9%;overflow:hidden;color:#302052;letter-spacing:-.045cqw}
+.psv-canvas label{display:block;font-size:1.16cqw;color:#6445b0;font-weight:800;letter-spacing:.01em;margin-bottom:1.05cqw}
+.psv-canvas p{font-size:1.6cqw;line-height:1.36;color:#564b6a;margin:.5cqw 0}
+.psv-canvas .psv-two{margin:0 5.6%;height:60%;display:grid;grid-template-columns:61.5% 36.5%;gap:2%;}
+.psv-canvas .psv-full{margin:0 5.6%;height:60%;padding:2%;}
+.psv-canvas .psv-white{background:#fff;border-radius:1.0cqw;}
+.psv-canvas .psv-lav{background:#eee9fa;border-radius:1.0cqw;}
+.psv-canvas .psv-sidecard{padding:7%;display:flex;flex-direction:column;justify-content:center;gap:.8cqw;overflow:hidden}
+.psv-sidecard .psv-formula-box{margin-top:1.3cqw}.psv-canvas .psv-diagram-block{display:flex;align-items:center;justify-content:center;padding:3%;overflow:hidden}
+.psv-canvas .psv-formula-box{padding:1.1cqw;border-radius:.8cqw;background:#ede6fc;text-align:center;font-size:2.45cqw;line-height:1.25;font-weight:800;color:#623fb0;max-height:6cqw;overflow:hidden}
+.psv-canvas .psv-formula-box.white{background:#fff}.psv-canvas .psv-formula-box.navy{background:#312253;color:#fff;font-size:2.2cqw}.psv-canvas .psv-formula-box.quiz{background:#6346b2;color:#fff;font-size:3.4cqw;max-height:none}
+.psv-canvas .psv-model{height:100%;width:100%;min-height:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.15cqw;overflow:hidden}
+.psv-canvas .psv-matrix{display:grid;grid-template-columns:repeat(var(--col),1fr);gap:.42cqw;width:max-content;max-width:95%;max-height:76%;align-content:center;}
+.psv-matrix i{display:block;border-radius:.27cqw;background:#fcfbff;border:.1cqw solid #b6a1dc;width:2.6cqw;height:2.6cqw}.psv-matrix i.is-on{background:#24b5aa;border-color:#24b5aa}
+.psv-canvas .psv-diagram-label{font-size:2.1cqw;color:#6146b2;font-weight:800;text-align:center}
+.psv-canvas .psv-big-number{font-size:4.6cqw;color:#6245ab;font-weight:850;line-height:1.2}
+.psv-canvas .psv-place-bars{display:flex;width:82%;height:6.1cqw;gap:.36cqw}
+.psv-place-bars .psv-segment{display:flex;align-items:center;justify-content:center;background:#1bada7;color:#fff;border-radius:.4cqw;font-size:2.5cqw;font-weight:800}.psv-place-bars .p1{background:#f05b91}.psv-place-bars .p2{background:#e9b74e}
+.psv-canvas .psv-area{display:grid;width:82%;max-height:76%;aspect-ratio:1.7;grid-template-columns:72% 28%;grid-template-rows:70% 30%;border:.18cqw solid #19ada6}
+.psv-area .psv-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;background:#dcf4f0;color:#179a93;border:1px solid #2fb5af;font-size:1.3cqw;font-weight:700;text-align:center;line-height:1.4}
+.psv-area .psv-cell strong{font-size:2.0cqw}.psv-area .psv-cell:nth-child(2){background:#fff0cf;color:#bd8735;border-color:#d0a35f}.psv-area .psv-cell:nth-child(3){background:#e9edff;color:#687de4;border-color:#7486eb}.psv-area .psv-cell:nth-child(4){background:#ffe7ef;color:#dc5387;border-color:#f17eab}
+.psv-canvas .psv-algorithm{background:#fff;border-radius:1cqw;padding:1cqw 4.2cqw;font-weight:850;text-align:right;line-height:1.08;font-size:3.24cqw;color:#302552;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;max-height:96%}
+.psv-algorithm hr{width:100%;border:0;border-top:.16cqw solid #523c8a;margin:.35cqw}.psv-algorithm .rose{color:#ee568c}.psv-algorithm .teal{color:#1aa9a1}.psv-algorithm .purple{color:#6646b1}
+.psv-canvas .psv-fraction-bar{width:89%;display:flex;height:9.0cqw;gap:.25cqw}
+.psv-fraction-bar i{display:block;flex:1;border:2px solid #6540aa;background:#fff}.psv-fraction-bar i.filled{background:#1ab0a6;border-color:#1ab0a6}
+.psv-canvas .psv-bars{display:flex;align-items:flex-end;justify-content:space-evenly;gap:1cqw;width:86%;height:85%;border-bottom:.2cqw solid #625394}
+.psv-bars span{height:100%;width:15%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:.3cqw}
+.psv-bars span i{width:75%;background:#18a8a2;border-radius:.3cqw .3cqw 0 0}.psv-bars span:nth-child(2) i{background:#ea6092}.psv-bars span:nth-child(3) i{background:#7452c2}.psv-bars span:nth-child(4) i{background:#7e91ea}.psv-bars b{color:#51406f;font-size:1.3cqw}
+.psv-canvas .psv-numberline{width:92%;display:flex;justify-content:space-between;border-top:.25cqw solid #7048bb;margin-top:2cqw}
+.psv-numberline span{font-weight:700;color:#332652;font-size:1.55cqw;border-left:.15cqw solid #6d50ba;padding:.5cqw .4cqw 0}
+.psv-canvas .psv-circle{width:17cqw;height:17cqw;border:.24cqw solid #6747b6;border-radius:100%;position:relative}
+.psv-circle-line{position:absolute;left:3%;top:50%;width:94%;height:.22cqw;background:#15aaa2}.psv-center{position:absolute;left:51%;top:51%;color:#422b7b;font-weight:800}
+.psv-canvas .psv-clock{width:17cqw;height:17cqw;border:.24cqw solid #6540b1;border-radius:100%;position:relative;background:#fff}.psv-clock span{position:absolute;width:.22cqw;height:5.5cqw;background:#62509a;left:49.5%;top:18%}.psv-clock i{position:absolute;width:5.3cqw;height:.24cqw;background:#16a8a0;left:49%;top:49%}
+.psv-canvas .psv-symmetry{display:flex;align-items:center;justify-content:center;gap:6cqw;font-size:2.9cqw;font-weight:850;color:#6047a3;height:80%}.psv-symmetry span{height:100%;border-left:.2cqw dashed #6b4ab3}.psv-symmetry i{font-style:normal;color:#13a9a6}.psv-symmetry b{color:#e7568f}
+.psv-canvas .psv-rightangle{width:16cqw;height:15cqw;border-left:.25cqw solid #18aaa3;border-bottom:.25cqw solid #6750ae;position:relative}.psv-rightangle i{position:absolute;bottom:.1cqw;left:.1cqw;width:1.7cqw;height:1.7cqw;border-top:.15cqw solid #6350b2;border-right:.15cqw solid #6350b2}.psv-rightangle b{position:absolute;left:2.2cqw;bottom:.3cqw;color:#6750b0;font-size:1.9cqw}
+.psv-canvas .psv-formula-focus{font-size:3.1cqw;font-weight:800;color:#6748b7}
+.psv-canvas .psv-stepgrid{display:flex;gap:1.5cqw;width:100%;justify-content:space-between;margin-top:1.8cqw;max-height:69%;}
+.psv-canvas .psv-step{flex:1;background:#e1f8f5;padding:1.8cqw;border-radius:.8cqw;display:flex;flex-direction:column;gap:1cqw;justify-content:space-around;overflow:hidden}
+.psv-step b{font-size:1.45cqw;color:#13a59c}.psv-step strong{font-size:1.62cqw;color:#178c8a;line-height:1.28;text-align:center}.psv-step.p1{background:#feebf3}.psv-step.p1 b,.psv-step.p1 strong{color:#d94781}.psv-step.p2{background:#ede8fc}.psv-step.p2 b,.psv-step.p2 strong{color:#6344ad}
+.psv-canvas .psv-quiz{margin:0 5.6%;height:61%;display:flex;flex-direction:column;gap:1.9cqw}
+.psv-canvas .psv-quiz-bottom{flex:1;display:flex;align-items:center;justify-content:space-between;padding:2.3cqw 3cqw;min-height:0;gap:3cqw}.psv-quiz-bottom label{color:#139a95}.psv-quiz-bottom p{font-size:2.0cqw}.psv-quiz-bottom b{width:26%;text-align:center;background:#ede6fa;border-radius:.9cqw;color:#6442af;font-size:6cqw}
+.psv-canvas .psv-side-solution{display:flex;gap:4cqw;align-items:center;margin-top:3.3cqw}.psv-side-solution p{flex:1}.psv-side-solution .psv-formula-box{flex:1}
+.psv-canvas .psv-slide-number{position:absolute;right:4.8%;bottom:3.2%;font-size:1.05cqw;color:#796f8f}
+.psv-canvas.psv-cover{background:#2d2050;border-color:#2d2050;color:#fff}
+.psv-canvas .psv-cover-orb{position:absolute;border-radius:100%;background:#6543b3}.psv-cover-orb.orb-one{width:27%;aspect-ratio:1;right:-4%;top:-21%}.psv-cover-orb.orb-two{width:19%;aspect-ratio:1;right:-7%;bottom:-26%;background:#8b61df}
+.psv-canvas .psv-cover-body{position:absolute;left:6%;width:55%;top:10%;display:flex;flex-direction:column;gap:1.5cqw}.psv-cover-body .psv-pill{background:#584089;color:#fff;border-radius:3cqw;padding:.7cqw 1.2cqw;width:max-content;font-size:1.1cqw;font-weight:700}
+.psv-cover-body h2{color:#fff;font-size:3.3cqw;line-height:1.16;margin:1.2cqw 0 0;font-weight:900;max-height:13.8cqw;overflow:hidden}.psv-cover-body p{color:#e9dff9;font-size:1.6cqw;margin:0}.psv-cover-body .psv-formula-box.cover{background:#55408f;color:#ffd278;font-size:2.75cqw;max-height:6cqw}
+.psv-canvas .psv-cover-figure{position:absolute;right:7%;top:23%;width:32%;height:55%;background:#fff;border-radius:1cqw;padding:1.6cqw;box-shadow:0 10px 25px #170a3a4d}
+.psv-cover-figure .psv-model{height:100%;}.psv-cover-figure .psv-matrix i{width:2.2cqw;height:2.2cqw;background:#6748b7}.psv-cover-figure .psv-matrix i.is-on{background:#6748b7}.psv-cover-figure .psv-big-number{font-size:3.8cqw}
+.psv-canvas.psv-cover .psv-slide-number{color:#e8dbfd}
+@media(max-width:750px){.ps-root .ps-visual.psv-canvas{width:100%}.psv-canvas .psv-head,.psv-canvas .psv-h1{margin-left:4%;margin-right:4%}}
+.ps-root .ps-visual.psv-canvas.psv-cover{background:#2d2050;color:#fff}
+

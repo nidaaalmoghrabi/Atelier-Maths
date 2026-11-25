@@ -1,0 +1,58 @@
+{
+  "books": [
+    {
+      "name": "g4",
+      "bytes": 5537324,
+      "sha256": "b9cf75f33fec14a9cdfa4145b0246a4aef53e060283ff23ad81b37100775caf6"
+    },
+    {
+      "name": "g5",
+      "bytes": 1355376,
+      "sha256": "57f4ab1db6b8c4785c364ee7f27a5783586c79b0e3e26064cbfc198aa9d4446d"
+    },
+    {
+      "name": "g6v1",
+      "bytes": 2886684,
+      "sha256": "56247beca0d245fb3098b686ac5a8bbcc6b96241a639e0bfd56dbb9df8ba10d2"
+    },
+    {
+      "name": "g6v2",
+      "bytes": 3175653,
+      "sha256": "855ee95f9d920ec1b8a61d00e86d5e2c7715c1467ce6b65b873d8116aa626430"
+    },
+    {
+      "name": "g7",
+      "bytes": 1314486,
+      "sha256": "90b340924f536cef8d6f1a4e3814855b5107843dd09fd82cf89259661a1e821c"
+    },
+    {
+      "name": "g7-fr",
+      "bytes": 1377690,
+      "sha256": "64698a5dad871090046a3d44a39e2cc1d85cbc39fd2d13d4880d95e902209daa"
+    },
+    {
+      "name": "g4-fr",
+      "bytes": 7697373,
+      "sha256": "83824f7e4493b30d408507e7209e4dfe44fb13c80a1a799d5290193479b2ed72"
+    },
+    {
+      "name": "g5-fr",
+      "bytes": 2485152,
+      "sha256": "8e9bcfcb52fb96b91eb77a173b9b008fc331afe6d4cb93c14ebd596ba29c8854"
+    },
+    {
+      "name": "g6v1-fr",
+      "bytes": 2186260,
+      "sha256": "27ea86789e414657ceecaf6eb6be65b045d59fdf78c185396f6eb16c6d2657fd"
+    },
+    {
+      "name": "g6v2-fr",
+      "bytes": 4806357,
+      "sha256": "3ff78c37021028eba282d682e98a8a59ef25bf60c31cb2d29852518e7d0a573f"
+    }
+  ],
+  "styleCount": 18,
+  "scriptCount": 17,
+  "logoCount": 2,
+  "generatedFrom": "ATELIER_MATHS_Illustration_Option_Fixed.html"
+}

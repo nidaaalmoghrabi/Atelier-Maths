@@ -1,0 +1,30 @@
+
+.brand-mark,.topbar-crest,.school-crest-banner{display:none!important}
+.sidebar{overflow-y:auto;overscroll-behavior:contain}
+.sidebar .nav-item{min-height:38px;line-height:1.25}
+.atelier-upload-shortcut{background:#eff7ff;border:1px solid #bad7ff}
+.type-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:7px}
+.checkbox-card{display:flex;gap:8px;align-items:center;padding:12px;border:1px solid #d4e1f0;border-radius:10px;background:#f8fbff;line-height:1.3;font-size:13px}
+.checkbox-card input{accent-color:#1c64d1;width:16px;height:16px;flex:0 0 auto}
+.progress-select{min-width:145px;max-width:220px;border-radius:9px;padding:9px;border:1px solid #cbd9ea;background:#fff}
+#main .panel,#main .unit-row,#main .unit-body{min-width:0}
+#main .unit-body b,#main .unit-body .hint{overflow-wrap:anywhere}
+#main .stack-actions{flex-wrap:wrap}
+@media(max-width:780px){
+ .type-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .sidebar{width:min(88vw,340px)!important;max-height:100dvh;position:fixed!important;top:0!important;bottom:0!important}
+ .main-shell{min-width:0;width:100%}
+ .main-shell .topbar{padding-left:14px;padding-right:14px}
+ .page-head{display:flex;flex-wrap:wrap;gap:14px}
+ .page-head .stack-actions{width:100%}
+ .unit-row{display:flex;flex-wrap:wrap;gap:10px}
+ .unit-actions{display:flex;flex-wrap:wrap;gap:7px}
+ .form-grid,.grid-two,.metrics{grid-template-columns:1fr!important}
+ .field.col-2,.field.full{grid-column:auto!important}
+ .panel{padding:16px!important}
+ .topbar .top-actions{gap:5px}
+ .topbar button{font-size:12px}
+ #pdfFrame{min-height:62vh;width:100%}
+}
+@media(max-width:380px){.type-grid{grid-template-columns:1fr}.progress-select{min-width:120px}.nav-item{font-size:13px}}
+

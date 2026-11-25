@@ -1,0 +1,6 @@
+
+.crdp-row-illustration{margin:6px 0 1px;max-width:100%;}
+.crdp-row-illustration .math-figure{margin:2px 0;max-width:100%;padding:2px;border:0;background:transparent;}
+.crdp-row-illustration .math-book-diagram{display:block;width:min(100%,250px)!important;max-width:100%!important;height:auto!important;aspect-ratio:430/218;}
+@media print{.crdp-row-illustration .math-book-diagram{max-width:195px!important;}}
+

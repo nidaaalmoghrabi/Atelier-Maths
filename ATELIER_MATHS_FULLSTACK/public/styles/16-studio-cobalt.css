@@ -1,0 +1,336 @@
+
+/* ===========================================================================
+   ATELIER MATHS · STUDIO COBALT — redesigned learning studio
+   Non-destructive presentation layer; original content, logic, PDFs, and
+   exported-school-template HTML/DOCX are deliberately left untouched.
+   =========================================================================== */
+:root{
+ --navy:#15276b;
+ --navy2:#243f9a;
+ --ink:#182753;
+ --sub:#64718d;
+ --muted:#f0f4ff;
+ --bg:#f4f6fd;
+ --line:#e5eafa;
+ --green:#2979ec;
+ --greenlite:#eaf2ff;
+ --orange:#f9b566;
+ --red:#d55777;
+ --cream:#fff7e8;
+ --white:#fff;
+ --shadow:0 13px 32px rgba(48,71,151,.065);
+ --studio-blue:#3457e8;
+ --studio-blue2:#557cfb;
+ --studio-purple:#7269e8;
+}
+html,body{background:var(--bg);font-family:"Aptos","Segoe UI",Inter,Arial,sans-serif;color:var(--ink)}
+html{scroll-behavior:smooth}
+body{background-image:radial-gradient(ellipse at 83% 5%,rgba(199,214,255,.35),transparent 34%),radial-gradient(ellipse at 36% 80%,rgba(229,234,255,.4),transparent 37%);background-attachment:fixed}
+button,select,input,textarea{font-family:inherit}
+button:focus-visible,a:focus-visible{outline:3px solid #ffb850;outline-offset:3px}
+.app{align-items:stretch}
+/* Luminous white navigation changes the whole experience from the navy panel. */
+.sidebar{
+ width:274px;min-width:274px;padding:26px 17px 18px;
+ background:#fff;color:var(--ink);
+ border-right:1px solid #e3e9fc;
+ box-shadow:10px 0 38px rgba(50,69,142,.045);
+ scrollbar-color:#bdcaee transparent;
+}
+.brand{position:relative;gap:12px;padding:0 4px 21px;margin:0 0 24px;border-bottom:1px solid #e8edfb;align-items:center}
+.brand strong{font-size:18px;letter-spacing:.01em;font-weight:850;color:#192e80}
+.brand strong em{font-style:normal;color:#4978f2}
+.brand small{font-size:10px;letter-spacing:.055em;color:#7a89af;font-weight:600}
+.school-crest-mark{width:52px;height:55px;flex-basis:52px;border:1px solid #e0e7fc;border-radius:14px;padding:5px;background:linear-gradient(135deg,#fff,#f1f5ff)}
+.brand .school-crest-mark+div strong{font-size:17px}
+.section-label{color:#9aa6c3;font-size:10px;font-weight:850;letter-spacing:.17em;padding:0 14px 11px}
+.grade-label{margin-top:27px}
+.nav-item,.grade-btn{color:#667597;font-size:12.6px;font-weight:650;line-height:1.3;border-radius:12px;padding:11px 13px;gap:11px;min-height:43px;margin-bottom:3px;transition:background .15s ease,color .15s ease,transform .15s ease}
+.nav-item:hover,.grade-btn:hover{background:#eef3ff;color:#2747b9;transform:translateX(2px)}
+.nav-item.active,.grade-btn.active{background:linear-gradient(111deg,#3457e8,#5974f4);color:white;box-shadow:0 8px 16px rgba(57,86,230,.22)}
+.nav-item.active:hover,.grade-btn.active:hover{transform:none}
+.nav-icon{font-size:19px;color:#6d85d7;width:22px;text-align:center;flex:0 0 22px}
+.nav-item.active .nav-icon{color:#fff}
+.grades{gap:5px}
+.grade-btn{padding:10px 14px;background:#f7f9ff;border:1px solid #eaf0fd;color:#455b8a}
+.grade-btn i{background:#7392fa;width:8px;height:8px}
+.grade-btn small{color:#7787b4}
+.grade-btn.active small{color:#e9eaff}
+.sidebar-bottom{padding-top:25px}
+.small-callout{background:linear-gradient(148deg,#f0f4ff,#e9eeff);color:#576995;border:1px solid #e0e8fc;border-radius:15px;font-size:11px;padding:15px;line-height:1.75}
+.small-callout b{color:#304fbd}
+.footerline{font-size:10px;color:#92a1c0}
+/* A vivid cobalt masthead instead of the former neutral top strip. */
+.main-shell{min-width:0}
+.topbar{height:76px;padding:0 39px;background:linear-gradient(105deg,#243bb2 0%,#385bea 57%,#6686ff 100%);border-bottom:0;box-shadow:0 7px 20px rgba(47,79,199,.14);z-index:8}
+.topbar:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 45%,rgba(255,255,255,.09) 66%,transparent 81%)}
+.topbar>*{position:relative;z-index:1}
+.topbar .crumb{color:#e5ecff;letter-spacing:.11em;font-size:11px;line-height:1.5;font-weight:800}
+.topbar-crest{width:43px;height:43px;border-radius:12px;border:1px solid rgba(255,255,255,.55);background:#fff;padding:3px;box-shadow:0 4px 11px rgba(17,44,128,.1)}
+.topbar .status-dot{color:#e9f1ff;font-weight:700;font-size:10.5px}
+.topbar .outline-btn.compact{color:white;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.13);backdrop-filter:blur(7px);border-radius:11px}
+.topbar .outline-btn.compact:hover{background:rgba(255,255,255,.27);border-color:rgba(255,255,255,.75)}
+.lang-toggle{background:#fff;color:#2745bf;border-color:transparent;border-radius:11px;box-shadow:0 4px 13px rgba(22,50,140,.14);font-size:12px;min-height:36px}
+.lang-toggle:hover{background:#f1f4ff;border-color:#fff}
+/* Airy, editorial content rhythm. */
+.content{max-width:1630px;padding:36px 43px 100px}
+.eyebrow{color:#4264df;letter-spacing:.17em;font-size:10px;font-weight:850;margin-bottom:12px}
+.page-head{padding:24px 28px;margin-bottom:24px;background:linear-gradient(115deg,#fff 0%,#f7f9ff 76%,#edf2ff 100%);border-radius:21px;border:1px solid #e5ebfd;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.page-head:before{content:"";position:absolute;width:7px;height:100%;left:0;top:0;background:linear-gradient(#3766ed,#8b90f9)}
+.page-head:after{content:"";position:absolute;right:18%;top:-48px;width:170px;height:170px;border:1px solid rgba(75,114,235,.06);border-radius:50%;pointer-events:none}
+.page-head>div{position:relative;z-index:1}
+.page-head h1{font-size:clamp(25px,2.65vw,38px);line-height:1.18;font-weight:820;letter-spacing:-.045em;color:#152763}
+.page-head p{font-size:12.5px;color:#71809f;line-height:1.8;margin-top:10px;max-width:760px}
+.section-head h2{font-size:20px;color:#1d3172;font-weight:800;letter-spacing:-.025em}
+.section-head small{color:#8290ab}
+.hero{background:linear-gradient(120deg,#263cb8 0%,#345ded 53%,#6888ff 100%);border-radius:23px;padding:35px 38px;min-height:190px;box-shadow:0 16px 38px rgba(53,91,231,.20);margin:0 0 22px}
+.hero:before{width:280px;height:280px;right:-65px;bottom:-158px;background:rgba(255,255,255,.11)}
+.hero:after{height:250px;width:250px;right:40px;top:-112px;border:2px solid rgba(255,255,255,.20)}
+.hero h2{font:800 clamp(25px,2.8vw,37px)/1.15 "Aptos Display","Segoe UI",Arial,sans-serif;letter-spacing:-.04em}
+.hero p{color:#e5ecff;max-width:565px;font-size:13px;line-height:1.85}
+.hero .eyebrow{color:#ffdc9c}
+.hero .primary-btn{background:#fff;color:#2644c3;border-color:#fff;box-shadow:0 7px 21px rgba(25,42,114,.17)}
+.hero .primary-btn:hover{background:#ebf2ff}
+.hero-art{font-family:Georgia,serif;font-size:105px;opacity:.21;color:white;transform:rotate(-9deg);margin-right:65px}
+.panel,.metric,.grade-card,.question{border:1px solid #e5eafa;background:#fff;box-shadow:var(--shadow)}
+.panel{border-radius:19px;padding:24px;margin-bottom:20px}
+.panel h3{font-weight:800;color:#1e3376}
+.panel p{color:#697895}
+.metric{border-radius:19px;padding:23px 23px 20px;position:relative;overflow:hidden;min-height:155px;transition:transform .18s ease,box-shadow .18s ease}
+.metric:hover{transform:translateY(-2px);box-shadow:0 16px 31px rgba(55,88,182,.11)}
+.metric:before{content:"";position:absolute;width:85px;height:85px;right:-28px;top:-33px;background:#eff4ff;border-radius:26px;transform:rotate(22deg)}
+.metric:nth-child(2):before{background:#f0edff}
+.metric:nth-child(3):before{background:#fff3e7}
+.metric:nth-child(4):before{background:#eaf7ff}
+.metric .label{font-size:10.5px;font-weight:790;letter-spacing:.035em;color:#7e8aab;position:relative}
+.metric .value{font-size:34px;letter-spacing:-.045em;font-weight:860;color:#243db9;position:relative}
+.metric:nth-child(2) .value{color:#6654db}
+.metric:nth-child(3) .value{color:#da8d43}
+.metric:nth-child(4) .value{color:#0f91ba}
+.metric .foot{font-size:11px;color:#8996b0;position:relative}
+.metric .stripe{background:linear-gradient(90deg,#3e62f1,#8a95ff);height:4px;width:45px;border-radius:5px}
+.metric:nth-child(2) .stripe{background:#8f81ef}
+.metric:nth-child(3) .stripe{background:#f4b77e}
+.metric:nth-child(4) .stripe{background:#63c1eb}
+.grade-cards{gap:17px}
+.grade-card{border-radius:21px;padding:24px;min-height:205px;background:linear-gradient(155deg,#fff 43%,#eff3ff 100%);transition:border-color .18s,transform .18s,box-shadow .18s}
+.grade-card:nth-child(2){background:linear-gradient(155deg,#fff 43%,#f0f0ff 100%)}
+.grade-card:nth-child(3){background:linear-gradient(155deg,#fff 43%,#ebf8ff 100%)}
+.grade-card:nth-child(4){background:linear-gradient(155deg,#fff 43%,#f1f5ff 100%)}
+.grade-card:hover{transform:translateY(-5px);border-color:#aab8f9;box-shadow:0 19px 34px rgba(48,71,151,.13)}
+.grade-card .bignum{font:850 41px/1.2 "Aptos Display","Segoe UI",Arial,sans-serif;letter-spacing:-.06em;color:#2c49d4}
+.grade-card:nth-child(2) .bignum{color:#6957d3}
+.grade-card:nth-child(3) .bignum{color:#2789c9}
+.grade-card:nth-child(4) .bignum{color:#315ea9}
+.grade-card .grade-sub{font-size:11px;color:#697ea7;font-weight:550}
+.grade-card .bar{height:7px;background:#e2e9f9;margin-top:27px}
+.grade-card .bar span,.progress-track span{background:linear-gradient(90deg,#4465f3,#8b95fb)}
+.grade-card .progress-label{color:#8493ad}
+.card-arrow{color:#4267dc;font-size:23px;right:23px;top:23px}
+/* Subtle card system around all functional workspaces. */
+.home-books-panel{border:1px solid #dce6ff;border-radius:21px;background:linear-gradient(125deg,#f2f5ff,#eaf1ff);padding:22px}
+.home-books-lead h2{color:#19357f;font-size:20px}
+.home-books-lead p{color:#65779d}
+.home-books-grid{gap:11px}
+.home-book-button{border:1px solid #e1e8fa;border-radius:14px;background:rgba(255,255,255,.95);min-height:86px;padding:13px;box-shadow:0 4px 13px rgba(59,86,181,.05);transition:transform .18s,box-shadow .18s,border-color .18s}
+.home-book-button:hover,.home-book-button:focus-visible{transform:translateY(-3px);background:#fff;border-color:#aabffb;box-shadow:0 11px 23px rgba(51,82,185,.12)}
+.home-book-name{color:#284381;font-size:12px}
+.home-book-name small{color:#8697b6}
+.home-book-icon{font-size:22px}
+.school-crest-banner{background:#fff;border:1px solid #e3eafb;border-radius:17px;gap:15px;padding:15px 17px;margin:0 0 23px;box-shadow:var(--shadow)}
+.school-crest-banner img{border-radius:12px;background:#f7f9ff;padding:5px;width:66px;height:66px}
+.school-crest-banner b{font:750 14px "Segoe UI",Arial,sans-serif;letter-spacing:-.01em;color:#243c91}
+.school-crest-banner span{font-size:11px;color:#8090af}
+.unit-row{border-radius:13px;background:#fff;gap:14px;padding:15px;border-color:#e4eafa}
+.unit-row:hover{border-color:#aac1fb;background:#fbfcff}
+.unit-number{min-width:39px;height:39px;background:#edf2ff;color:#3a5adb;border-radius:11px}
+.unit-body b{font-size:12.5px;color:#233b76}
+.unit-body .hint{color:#8997b0}
+.pill{border-radius:30px;background:#f0f4ff;color:#4866a9;font-size:10px;font-weight:730}
+.pill.green{background:#eaf2ff;color:#3e61ce}
+.pill.gold{background:#fff3df;color:#b4792f}
+.pill.red{background:#ffedf2;color:#c45071}
+.badge{background:#f8faff;border-color:#e8edfa;color:#647ca5;border-radius:9px}
+.notice{border-radius:12px}
+.question{border-radius:16px;padding:21px}
+.question .no{color:#385ce9}
+.opt{border-radius:11px}
+.primary-btn,.accent-btn{background:linear-gradient(106deg,#3557df,#5979f5);border:1px solid #4360e7;color:white;border-radius:12px;padding:12px 18px;font-weight:760;box-shadow:0 5px 12px rgba(56,86,209,.13);transition:transform .15s,filter .15s}
+.primary-btn:hover,.accent-btn:hover{background:linear-gradient(106deg,#2949d3,#476be9);transform:translateY(-1px)}
+.outline-btn,.soft-btn{border:1px solid #dce5fb;background:#fff;color:#3250a1;border-radius:11px;font-weight:710}
+.outline-btn:hover,.soft-btn:hover{background:#f2f5ff;border-color:#aabef3}
+.small-btn{color:#3559bd;background:#f9fbff;border:1px solid #e2e8fb;border-radius:9px;font-weight:650}
+.small-btn:hover{background:#e9efff}
+.tagbtn{border-color:#e1e7f8;color:#536a99;background:#fff}
+.tagbtn.selected{border-color:#849cf3;background:#edf2ff;color:#304fc3}
+.field{color:#465a88;font-weight:750;font-size:11.5px}
+.field input,.field select,.field textarea,.filterbar input,.filterbar select{background:#fbfcff;border-color:#dfe7f7;color:#1d305b;border-radius:12px;padding:12px 13px;font-size:12.5px}
+.field input:focus,.field select:focus,.field textarea:focus,.filterbar input:focus{border-color:#6179f1;box-shadow:0 0 0 3px rgba(76,110,235,.12)}
+input[type="checkbox"],input[type="radio"]{accent-color:#4769e8}
+.check input{accent-color:#4769e8}
+.filterbar{gap:12px}
+.hr{background:#e7ebf9}
+.proposal-card{border-color:#e3eafa;border-radius:19px;box-shadow:var(--shadow)}
+.proposal-illustration{background:linear-gradient(150deg,#f0f5ff,#e7efff);border-color:#e5eafa}
+.proposal-card h3{color:#263b85}
+.proposal-save{border-radius:12px}
+.vis-math-lab{border:1px solid #e1eafb;background:#f9fbff;border-radius:18px}
+.vis-lab-top h4{color:#243a83}
+.vis-lab-kicker{color:#476ce5}
+.vis-lab-badge{background:#eaf1ff;color:#4260bd;border-color:#c9d7fd}
+.vis-control{color:#374d87}
+.vis-lab-reset{color:#3f5dc6;border-color:#bfcff8;border-radius:10px}
+.book-viewer{border:1px solid #e0e7fa}
+.book-viewer iframe{border-radius:14px;border:1px solid #e5eafa}
+.site-exam-heading{border-color:#e2eafb;border-radius:14px}
+.ghost-btn{color:#5971a7}
+/* Floating touch navigation panel, compact top bar, no sideways scrolling. */
+@media(max-width:1150px){
+ .sidebar{width:244px;min-width:244px;padding:22px 12px}
+ .nav-item,.grade-btn{font-size:12px;padding:10px 11px}
+ .content{padding:28px 27px 88px}
+ .topbar{padding:0 24px}
+ .page-head{padding:22px}
+}
+@media(max-width:780px){
+ html,body{background:#f4f6fd}
+ .sidebar{width:min(316px,86vw);min-width:0;padding:22px 15px 26px;border-right:1px solid #e1e8fb;box-shadow:18px 0 40px rgba(20,35,85,.16);position:fixed;left:0;top:0;bottom:0;z-index:30;transform:translateX(-105%);transition:transform .25s ease;overscroll-behavior:contain}
+ .sidebar.open{transform:translateX(0)}
+ .nav-item,.grade-btn{font-size:12.7px;min-height:43px}
+ .mobile{display:block}
+ .icon-btn{color:#fff;font-size:25px;min-width:32px;min-height:36px;padding:4px}
+ .topbar{height:70px;padding:0 13px;gap:8px;position:sticky}
+ .topbar-crest{width:35px;height:35px}
+ .topbar .crumb{font-size:9px;max-width:175px;letter-spacing:.015em}
+ .top-actions{gap:5px}
+ .top-actions .status-dot{display:none}
+ .topbar .outline-btn.compact{width:31px;min-width:31px;padding:8px 0;border-radius:9px;font-size:0;overflow:hidden;white-space:nowrap;min-height:34px}
+ .topbar .outline-btn.compact::first-letter{font-size:16px}
+ .lang-toggle{min-width:52px;padding:7px 8px;min-height:34px;font-size:11px}
+ .lang-toggle b{font-size:11px}
+ .content{padding:19px 14px 90px;max-width:100%}
+ .page-head{padding:21px 19px;border-radius:16px;gap:17px;margin-bottom:17px}
+ .page-head h1{font-size:27px;letter-spacing:-.035em}
+ .page-head p{font-size:12px}
+ .page-head .stack-actions{width:100%;gap:8px}
+ .page-head .stack-actions .primary-btn,.page-head .stack-actions .outline-btn{flex:1 1 auto}
+ .hero{padding:24px 22px;border-radius:18px;min-height:auto}
+ .hero h2{font-size:28px}
+ .hero-art{display:none}
+ .metrics{gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .metric{padding:17px;min-height:132px;border-radius:15px}
+ .metric .value{font-size:27px}
+ .metric .label{font-size:9.5px}
+ .grade-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .grade-card{padding:16px;min-height:168px;border-radius:16px}
+ .grade-card .bignum{font-size:34px}
+ .grade-card .grade-sub{font-size:10px}
+ .card-arrow{top:16px;right:13px}
+ .panel{padding:17px;border-radius:16px}
+ .unit-row{flex-wrap:wrap}
+ .unit-body{flex:1 1 150px}
+ .unit-actions{flex:1 1 100%;justify-content:flex-end;gap:6px}
+ .question{padding:15px;border-radius:13px}
+ .question-top{flex-wrap:wrap}
+ .school-crest-banner{padding:12px;border-radius:14px}
+ .school-crest-banner img{width:56px;height:56px}
+ .school-crest-banner b{font-size:12px}
+ .home-books-panel{padding:14px;border-radius:16px}
+ .home-books-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .home-book-button{min-height:78px;padding:11px;gap:7px}
+ .home-book-name{font-size:11px}
+ .home-book-name small{font-size:10px}
+ .home-book-icon{font-size:18px}
+ .section-head{flex-wrap:wrap}
+ .grid-two,.form-grid,.split{grid-template-columns:1fr}
+ .form-grid .col-2{grid-column:span 1}
+ .question-options{grid-template-columns:1fr}
+ .book-viewer iframe{min-height:370px;height:62vh}
+ .project-suggestion-grid{grid-template-columns:1fr}
+}
+@media(max-width:420px){
+ .topbar .crumb{max-width:100px;font-size:9px}
+ .topbar-crest{width:30px;height:30px}
+ .topbar{gap:5px;padding:0 10px}
+ .top-actions{gap:4px}
+ .lang-toggle{min-width:47px;padding:7px 6px}
+ .grade-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .grade-card{min-height:164px}
+ .grade-card .bignum{font-size:32px}
+ .metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .metric .label{font-size:9px}
+ .home-book-button{min-height:72px}
+ .home-book-icon{display:none}
+ .page-head h1{font-size:25px}
+ .controls>*{min-width:0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.nav-item,.grade-btn,.grade-card,.metric,.primary-btn,.home-book-button{transition:none}}
+
+
+/* Dashboard only — compact, bilingual, complete, no scroll at normal laptop sizes. */
+body:has(.dashboard-fit) .content{padding:14px 24px 16px;}
+.dashboard-fit{display:flex;flex-direction:column;gap:12px;max-width:1370px;margin:0 auto;min-width:0}
+.dashboard-welcome{display:flex;align-items:center;justify-content:space-between;gap:16px;border:1px solid #e1e9fb;border-radius:17px;background:#fff;padding:14px 19px;box-shadow:var(--shadow)}
+.dashboard-welcome h1{font-size:24px;line-height:1.08;margin:4px 0 4px;color:#193481;letter-spacing:-.035em}
+.dashboard-welcome p{font-size:12px;line-height:1.35;margin:0;color:#5c6c91}
+.dashboard-welcome .eyebrow{font-size:9px;letter-spacing:.1em}
+.dashboard-welcome .primary-btn{font-size:12px;white-space:nowrap;flex:none;padding:11px 17px}
+.dashboard-books,.dashboard-grades,.dashboard-priorities{background:#fff;border:1px solid #e3eafd;border-radius:16px;box-shadow:var(--shadow);padding:12px 15px;min-width:0}
+.dashboard-section-title{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+.dashboard-section-title h2{font-size:14px;color:#223c89;line-height:1.18;margin:0;font-weight:800}
+.dashboard-section-title .compact-link{font-size:11px;padding:3px 6px;white-space:nowrap}
+.dashboard-fit .home-books-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.dashboard-fit .home-book-button{min-height:54px;padding:7px 10px;border-radius:9px;gap:7px}
+.dashboard-fit .home-book-icon{font-size:17px}
+.dashboard-fit .home-book-name{font-size:12px;line-height:1.1}
+.dashboard-fit .home-book-name small{font-size:10px;margin-top:1px}
+.dashboard-fit .home-book-open{font-size:13px}
+.dashboard-fit .metrics.dashboard-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0}
+.dashboard-fit .metric{padding:11px 14px;min-height:73px;border-radius:14px;box-shadow:var(--shadow)}
+.dashboard-fit .metric .label{font-size:9px;line-height:1.2;letter-spacing:.02em}
+.dashboard-fit .metric .value{font-size:24px;line-height:1.1;margin:3px 0 1px}
+.dashboard-fit .metric .foot{font-size:10px;line-height:1.2}
+.dashboard-lower{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:12px;min-height:0}
+.dashboard-fit .grade-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.dashboard-fit .grade-card{min-height:111px;padding:11px 13px;display:grid;grid-template-columns:45px minmax(0,1fr);column-gap:10px;align-items:center;text-align:left;border-radius:13px;cursor:pointer}
+.dashboard-fit .grade-card .bignum{font-size:26px;grid-row:1/2;line-height:1;color:#365ad9;margin:0}
+.dashboard-fit .dashboard-grade-info{display:flex;flex-direction:column;align-items:start;gap:2px}
+.dashboard-fit .dashboard-grade-info b{font-size:13px}
+.dashboard-fit .grade-card .grade-sub{font-size:10px;line-height:1.2;white-space:nowrap}
+.dashboard-fit .grade-card .bar{grid-column:1/-1;margin:6px 0 2px;height:5px}
+.dashboard-fit .grade-card .progress-label{grid-column:1/-1;margin:0;font-size:10px;line-height:1.2}
+.dashboard-fit .grade-card .card-arrow{font-size:12px;top:9px;right:10px}
+.dashboard-priority-list{display:flex;flex-direction:column;gap:9px}
+.dashboard-priority-row{width:100%;display:flex;align-items:center;gap:7px;border:1px solid #e5ebfa;border-radius:9px;background:#f7f9ff;color:#284276;padding:9px 10px;min-height:48px;text-align:left}
+.dashboard-priority-row:hover{background:#ecf3ff}
+.dashboard-priority-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px}
+.dashboard-no-priorities{display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;color:#67779b;background:#f8faff;border:1px dashed #dce5fb;border-radius:11px;min-height:120px;font-size:12px;line-height:1.45}
+/* Accessible true-or-false dropdown, replacing the previously always-open panel. */
+.tf-setting-panel{display:block!important;padding:0!important;overflow:hidden}
+.tf-setting-panel summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 15px;color:#223c89;font-weight:800;list-style:none;user-select:none}
+.tf-setting-panel summary::-webkit-details-marker{display:none}
+.tf-setting-panel summary:after{content:'▾';font-size:15px;margin-left:auto;transition:transform .15s}
+.tf-setting-panel[open] summary:after{transform:rotate(180deg)}
+.tf-setting-panel .tf-summary-note{font-size:10px;color:#697ba4;font-weight:500;white-space:nowrap}
+.tf-dropdown-content{display:grid;gap:9px;padding:4px 15px 14px;border-top:1px solid #e2eafa}
+.tf-dropdown-content label{display:flex;align-items:flex-start;gap:9px}
+.tf-dropdown-content input[type=checkbox]{flex:none;width:17px;height:17px;min-width:17px;margin:1px 0 0;accent-color:#3457e8}
+@media(max-width:900px){.dashboard-lower{grid-template-columns:minmax(0,1fr)}.dashboard-fit .grade-cards{grid-template-columns:repeat(4,minmax(0,1fr))}.dashboard-fit .grade-card{grid-template-columns:1fr;min-height:117px;padding:12px}.dashboard-fit .dashboard-grade-info{margin:4px 0 0}.dashboard-fit .grade-card .bignum{font-size:22px}}
+@media(max-width:780px){body:has(.dashboard-fit) .content{padding:14px 14px 40px}.dashboard-welcome{align-items:flex-start;flex-direction:column}.dashboard-welcome .primary-btn{width:100%}.dashboard-fit .home-books-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-fit .metrics.dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-fit .grade-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.dashboard-fit .grade-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-fit .grade-card{min-height:108px}.dashboard-welcome h1{font-size:22px}.tf-setting-panel .tf-summary-note{display:none}}
+
+@media(min-width:901px){body:has(.dashboard-fit) .content{padding-bottom:8px}.dashboard-fit{gap:10px}}
+.atelier-language-select{display:flex;align-items:center;gap:3px;padding:3px;border-radius:12px;border:1px solid #d9e5fa;background:#f2f7ff;flex-shrink:0}
+.atelier-language-option{border:none;background:transparent;color:#304467;font-size:12px;font-weight:700;border-radius:9px;padding:7px 10px;cursor:pointer;display:flex;gap:6px;align-items:center;white-space:nowrap}
+.atelier-language-option.is-active{background:#2455d7;color:#fff;box-shadow:0 2px 5px #224eaa25}
+.atelier-language-option:focus-visible{outline:3px solid #ffcd65;outline-offset:2px}
+.atelier-language-divider{color:#8390ac;font-size:13px;font-weight:600;user-select:none}
+@media(max-width:840px){.atelier-language-option{padding:6px 7px}}
+@media(max-width:390px){.atelier-language-select{gap:0}.atelier-language-option{padding:6px}}
+/* Language filter is limited to textbook listings; it never changes the global interface language. */
+.atelier-books-filter{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0 16px}
+.atelier-books-filter label{font-size:13px;font-weight:700;color:#344865}
+.atelier-books-filter select{min-width:158px;max-width:100%;border:1px solid #ccdaee;border-radius:9px;background:#fff;color:#203653;padding:8px 32px 8px 12px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer}
+.atelier-book-lang{display:inline-block;margin-left:7px;border-radius:6px;padding:2px 7px;background:#eef3ff;border:1px solid #d6e2fa;color:#315284;font-size:11px;font-weight:700}
+@media(max-width:600px){.atelier-books-filter{justify-content:flex-start}.atelier-books-filter select{flex:1}}
+

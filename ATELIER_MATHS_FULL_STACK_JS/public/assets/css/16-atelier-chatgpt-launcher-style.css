@@ -1,8 +1,0 @@
-
-/* App-launch deep link beside the existing Copy prompt controls. */
-.ps-root .ps-open-chatgpt{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:36px;padding:9px 13px;background:#eaf8f2;color:#0b6959;border:1px solid #a5d8c4;border-radius:10px;font-size:12px;font-weight:800;line-height:1.25;text-decoration:none;cursor:pointer;white-space:nowrap}
-.ps-root .ps-open-chatgpt:hover{background:#d7f3e6;border-color:#64b99a;color:#085846}
-.ps-root .ps-open-chatgpt:focus-visible{outline:3px solid #287cba;outline-offset:2px}
-.ps-root .ps-open-fallback{margin-top:8px;font-size:11px}
-.ps-root .ps-open-fallback a{color:#425f9c;text-decoration:underline}
-@media(max-width:760px){.ps-root .ps-open-chatgpt.ps-prompt-top{font-size:10px;white-space:normal;max-width:210px}.ps-root .ps-header-tools{gap:6px}}
